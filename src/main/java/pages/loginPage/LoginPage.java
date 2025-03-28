@@ -16,6 +16,8 @@ public class LoginPage {
 
     private By userName = By.id("userName");
     private By password = By.id("password");
+    private By loginButton = By.id("id=\"login\"");
+    private By verifyUserName = By.id("id=\"userName-value\"");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -36,6 +38,16 @@ public class LoginPage {
         userInput.sendKeys(paswd);
         AssertationUtils.assertElementIsDisplayed(userInput);
         System.out.println("DT logic1");
+    }
+
+    public void clickLoginButton(){
+        browserWaits.waitForElementToBeVisible(loginButton);
+        actionHelper.scrollAndClick(loginButton);
+        actionHelper.forceClick(loginButton);
+    }
+
+    public String getLoggedInUserName(){
+        return actionHelper.waitAndGetText(verifyUserName);
     }
 
 

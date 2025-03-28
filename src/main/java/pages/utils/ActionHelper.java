@@ -86,6 +86,19 @@ public class ActionHelper {
         }
     }
 
+    // Wait and get text of string
+    public String waitAndGetText(By locator) {
+        try {
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            String text = element.getText();
+            System.out.println("Extracted text from : " + locator + " - Value: " + text);
+            return text;
+        } catch (Exception e) {
+            System.err.println("Failed to obtained the text : " + locator + " - " + e.getMessage());
+            throw e;
+        }
+    }
+
     // Actions Click (Useful for hovering elements)
     public void actionsClick(By locator) {
         try {

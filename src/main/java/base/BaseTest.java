@@ -18,7 +18,7 @@ public abstract class BaseTest extends BrowserBase {
             driver = initializeDriver();
             loginPage = new LoginPage(driver);
 
-            String baseURL = dotenv.get("STAGEURL");
+            String baseURL = dotenv.get("BASEURL");
             driver.get(baseURL);
             //loginPage.performLogin(dotenv.get("VALIDEMAIL"),dotenv.get("VALIDPASSWORD"));
             isSuiteLoginPerformed = true;

@@ -17,8 +17,9 @@ public class LoginTest extends BaseTest {
 
     @Test(priority = 0, description = "Successful login")
     public void loginTest(){
-        loginPage.enterUserName();
-        loginPage.enterPassword();
+        loginPage.enterUserName("useeeeeeeeername");
+        loginPage.enterPassword("paaaaaaaswrd");
+        System.out.println("hmmm");
     }
 
 
